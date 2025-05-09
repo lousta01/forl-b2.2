@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Tech</title>
+    <script src="js/game.js" defer></script>
+    <link rel="stylesheet" href="css/gamestyle.css">
+    <script src="https://kit.fontawesome.com/e2e5be17a9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html"><img class="logo" src="img/logo_nav-kopi.png" alt="Secure Tech logo"></a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="#">Sikkerhed på nettet</a></li>
+            <li><a href="#">Om os</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="spil.html">Spil</a></li>
+        </ul>
+    </header>
+
+    <br> <br>
+
+    <main class="container">
+      <!-- Intro Section -->
+        <section id="intro" class="scene active">
+            <div class="scene-content">
+                <h2>Første dag hos Secure Tech</h2>
+                <p>Velkommen til din første dag som digital assistent hos firmaet SecureTech. Din chef er væk i dag, men du har fået adgang til e-mails og systemer. Din opgave er at komme godt i gang – og passe på virksomhedens data.</p>
+                <div class="choices">
+                    <button class="choice" onclick="startGame()">Start dagen</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Scene 1 -->
+        <section id="scene1" class="scene">
+            <div class="scene-content">
+                <h2>Mistænkelig e-mail</h2>
+                <p>Du åbner din arbejdsmail og ser en besked fra "IT-afdelingen": <i>"Din adgangskode udløber i dag. Klik her for at nulstille den nu, ellers mister du adgangen til systemet."</i></p>
+                <p><strong>Hvad gør du?</strong></p>
+                <div class="choices">
+                    <button class="choice" data-points="-1" data-feedback=" Du klikker på linket og bliver sendt til en side, der ligner login. Du skriver dine oplysninger ind... Et par timer senere er dine adgange misbrugt, og du får en vred mail fra IT. Du blev offer for phishing.">A. Klikker på linket og nulstiller adgangskoden</button>
+                    <button class="choice" data-points="1" data-feedback='Godt spot! Du opdager, at afsenderen hedder "it-support@securetech.help" og ikke virksomhedens rigtige domæne. Du rapporterer e-mailen - IT roser dig. Du håndterede truslen korrekt.'>B. Tjekker afsenderens e-mail og spørger din chef</button>
+                    <button class="choice" data-points="0" data-feedback="Du vælger at ignorere e-mailen. Senere får flere kollegaer den samme besked - nogle falder i. Din passivitet hjalp ikke, men du gjorde heller ikke skade. Du kunne have gjort mere.">C. Ignorerer det - du har lige fået din kode i dag</button>
+                    <button class="choice" data-points="1" data-feedback="D. Du ringer og taler med en ægte IT-medarbejder. De bekræfter, at det er phishing. Du sender advarsel videre til teamet. Godt arbejde - du tænker på sikkerhed!">D. Ringer til IT og spørger, om det er ægte</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Scene 2 -->
+        <section id="scene2" class="scene">
+            <div class="scene-content">
+                <h2>USB-stikket i kantinen</h2>
+                <p>I frokostpausen ser du et USB-stik ligge i sofaen. Det ligner noget, der tilhører en kollega.</p>
+                <p><strong>Hvad gør du?</strong></p>
+                <div class="choices">
+                    <button class="choice" data-points="-1" data-feedback="Du sætter det i din pc. Uden du ved det, installeres malware, og systemet kompromitteres. IT skal rense din computer. Det var en dårlig beslutning.">A. Tager det med og sætter det i din arbejdscomputer</button>
+                    <button class="choice" data-points="0" data-feedback="Du spørger rundt, og en kollega tager det – men det var ikke deres. Det viser sig, det var en test fra IT. Du forsøgte at hjælpe, men løsningen var ikke sikker.">B. Spørger i kantinen, om nogen savner det</button>
+                    <button class="choice" data-points="1" data-feedback="Du afleverer det til IT, og de tjekker det for malware. De fortæller dig, det var en simuleret test – og du bestod! Top sikkerhedsbevidsthed.">C. Giver det til IT med det samme</button>
+                    <button class="choice" data-points="0" data-feedback="Du ignorerer det. IT finder det senere og bruger det i awareness-træning. Du undgik risikoen, men gjorde ikke noget aktivt.">D. Lader det ligge – det er ikke dit problem</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Scene 3 -->
+        <section id="scene3" class="scene">
+            <div class="scene-content">
+                <h2>Adgangskode-dilemma</h2>
+                <p>En kollega kan ikke logge ind og spørger dig: <i>"Kan jeg ikke bare få din kode? Det er jo kun i dag...".</i></p>
+                <p><strong>Hvad gør du?</strong></p>
+                <div class="choices">
+                    <button class="choice" data-points="-1" data-feedback="Du deler din adgangskode. Kollegaen får adgang – men ugen efter bliver der logget ind fra en ukendt enhed. IT opdager det og beder dig ændre alle dine adgangskoder. Du har overtrådt virksomhedens sikkerhedspolitik.">A. Giver koden – I skal jo være effektive</button>
+                    <button class="choice" data-points="1" data-feedback="Du forklarer venligt, at du ikke må dele koder, og foreslår kollegaen kontakter IT. Senere roser din chef dig for at tage sikkerhed alvorligt. Perfekt håndtering!">B. Siger nej og beder dem kontakte IT</button>
+                    <button class="choice" data-points="0" data-feedback="Du hjælper kollegaen uden at dele adgangskoden. Det var en hurtig løsning, men det kunne stadig føre til fejl. En okay beslutning – men vær opmærksom.">C. Deler din skærm og styrer det for dem</button>
+                    <button class="choice" data-points="-1" data-feedback="Du sender koden – hurtigt og nemt. Men mobilen bliver senere stjålet, og beskeden lækkes. Et hurtigt valg med alvorlige konsekvenser.">D. Sender koden på sms, så de kan bruge den hurtigt</button>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Scene 4 -->
+        <section id="scene4" class="scene">
+            <div class="scene-content">
+                <h2>Fjernarbejde og fildeling</h2>
+                <p>Du skal sende et dokument med kundedata til en kollega hjemmefra.</p>
+                <p><strong>Hvad gør du?</strong></p>
+                <div class="choices">
+                    <button class="choice" data-points="-1" data-feedback="Filerne bliver delt – men uden beskyttelse. Ugen efter ligger kundedata på Reddit. En katastrofal sikkerhedsfejl.">A. Lægger det på Dropbox uden adgangskode</button>
+                    <button class="choice" data-points="1" data-feedback="Du sender filen krypteret, og kollegaen kan åbne den sikkert. IT kalder dig en sikkerheds-stjerne. Topscore! ">B. Sender en krypteret fil via virksomhedens mail</button>
+                    <button class="choice" data-points="-1" data-feedback="Du sender fra din Gmail – det er hurtigt, men ulovligt ifølge virksomhedens politik. Du brød reglerne – selvom det virkede. ">C. Bruger din private Gmail og vedhæfter filen</button>
+                    <button class="choice" data-points="1" data-feedback="Du uploader filen i den sikre Teams-kanal – og kun kollegaen har adgang. Sikker, korrekt og nem løsning.">D. Deler den i virksomhedens Teams-kanal</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Scene 5 -->
+        <section id="scene5" class="scene">
+            <div class="scene-content">
+                <h2>Sociale medier og fortrolige data</h2>
+                <p>Du er til tech-konference og tager et billede af præsentationen. Du overvejer at lægge det op på LinkedIn.</p>
+                <p><strong>Hvad gør du?</strong></p>
+                <div class="choices">
+                    <button class="choice" data-points="-1" data-feedback="Du poster billedet... og får likes! Men også et opkald fra HR: Billedet indeholdt fortrolige kundedata. Stor sikkerhedsbrøler.">A. Poster det med det samme – det er spændende!</button>
+                    <button class="choice" data-points="0" data-feedback="Du sender det som morskab, men billedet bliver delt videre. Risiko for læk – du mister kontrollen over det.">B. Sender billedet til en kollega privat</button>
+                    <button class="choice" data-points="1" data-feedback="Du får tilladelse og tilføjer en sløret version online. Godt tænkt – du viser ansvar.">C. Spørger foredragsholderen, før du deler noget</button>
+                    <button class="choice" data-points="1" data-feedback="Du tager billedet, men vælger at gemme det til noter – ikke dele det. Sikker og reflekteret beslutning.">D. Gemmer billedet til internt brug</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Ending Section -->
+        <section id="ending" class="scene">
+            <div class="scene-content">
+                <h2>Dagens arbejde er slut</h2>
+                <p id="ending-text"></p>
+                <div class="choices">
+                    <button class="choice" onclick="restartGame()">Spil igen</button>
+                </div>
+            </div>
+        </section>
+</main>
+
+</body>
+</html>
